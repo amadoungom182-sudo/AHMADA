@@ -1,0 +1,167 @@
+export default function AstouGlobalBusiness() {
+  const services = [
+    {
+      title: "Import International",
+      description:
+        "Approvisionnement de marchandises depuis l'Europe, l'Asie et l'Amérique vers l'Afrique.",
+      icon: "📦",
+    },
+    {
+      title: "Export",
+      description:
+        "Expédition de produits locaux vers les marchés internationaux.",
+      icon: "🌍",
+    },
+    {
+      title: "Transit & Douane",
+      description:
+        "Gestion des formalités douanières et accompagnement logistique complet.",
+      icon: "🚛",
+    },
+    {
+      title: "Conseil Logistique",
+      description:
+        "Optimisation de la chaîne d'approvisionnement et du transport.",
+      icon: "📈",
+    },
+  ];
+
+  const gallery = [
+    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=80",
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-blue-900">Astou Global Business</h1>
+          <nav className="hidden md:flex gap-6 font-medium">
+            <a href="#services" className="hover:text-blue-700">Services</a>
+            <a href="#about" className="hover:text-blue-700">À propos</a>
+            <a href="#gallery" className="hover:text-blue-700">Galerie</a>
+            <a href="#contact" className="hover:text-blue-700">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section
+        className="pt-32 pb-24 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1600&q=80')",
+        }}
+      >
+        <div className="bg-black/55">
+          <div className="max-w-7xl mx-auto px-6 py-24 text-white">
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl">
+              Votre partenaire de confiance en Import, Export et Logistique.
+            </h2>
+            <p className="mt-6 text-lg md:text-xl max-w-2xl text-gray-200">
+              Astou Global Business accompagne les entreprises dans le commerce
+              international, le transit douanier et la gestion de la chaîne
+              d'approvisionnement.
+            </p>
+            <a
+              href="#contact"
+              className="inline-block mt-8 bg-blue-700 hover:bg-blue-800 px-8 py-4 rounded-2xl font-semibold shadow-lg"
+            >
+              Demander un devis
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-center mb-12">Nos Services</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h4 className="text-xl font-semibold mb-3">{service.title}</h4>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-20">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <img
+            src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1200&q=80"
+            alt="Logistique"
+            className="rounded-3xl shadow-lg"
+          />
+          <div>
+            <h3 className="text-3xl font-bold mb-6">À propos de nous</h3>
+            <p className="text-gray-600 leading-8">
+              Astou Global Business est une entreprise spécialisée dans
+              l'import-export, le transit et la logistique internationale.
+              Notre mission est de simplifier vos opérations commerciales et
+              d'assurer une livraison rapide, sécurisée et conforme aux normes
+              internationales.
+            </p>
+            <ul className="mt-6 space-y-3 text-gray-700">
+              <li>✔ Expertise en commerce international</li>
+              <li>✔ Réseau de partenaires mondiaux</li>
+              <li>✔ Solutions sur mesure</li>
+              <li>✔ Service client réactif</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-center mb-12">Galerie</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {gallery.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Galerie ${index + 1}`}
+                className="rounded-2xl shadow-md h-64 w-full object-cover"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 className="text-3xl font-bold mb-6">Contactez-nous</h3>
+          <p className="text-gray-600 mb-8">
+            Besoin d'un partenaire fiable pour vos opérations d'import-export ?
+            Contactez Astou Global Business dès aujourd'hui.
+          </p>
+          <div className="bg-blue-900 text-white rounded-3xl p-8 shadow-lg">
+            <p className="text-lg">📍 Dakar, Sénégal</p>
+            <p className="text-lg mt-2">📞 +221 77 000 00 00</p>
+            <p className="text-lg mt-2">✉️ contact@astouglobalbusiness.com</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-8 text-center">
+        <p>
+          © {new Date().getFullYear()} Astou Global Business. Tous droits
+          réservés.
+        </p>
+      </footer>
+    </div>
+  );
+}
